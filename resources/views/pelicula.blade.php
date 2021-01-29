@@ -1,0 +1,1 @@
+<h1><?= $titulo ?>&nbsp;(<?= $anio ?>)</h1>
