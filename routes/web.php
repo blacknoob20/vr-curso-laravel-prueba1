@@ -20,18 +20,23 @@ Route::get('/', function () {
 
 Route::get('/movies/{pagina?}', 'PeliculaController@index');
 // Route::get('/detalle', [
-//     'uses' => 'PeliculaController@detalle',
-//     'as'   => 'detalle.movie'
-//     ]);
+    //     'uses' => 'PeliculaController@detalle',
+    //     'as'   => 'detalle.movie'
+    //     ]);
 // Middelwares
 Route::get('/detalle/{anio?}', [
     //Aplicar el middleware
-    'middleware' => 'testanio'
+    'middleware' => 'testanio',
     'uses'       => 'PeliculaController@detalle',
-    'as'         => 'detalle.movie'
-    ]);
-    
-Route::get('/redirigir', 'PeliculaController@redirigir');
+    'as'         => 'detalle.movie',
+]);
+        
+Route::get('/formulario', 'PeliculaController@formulario');
+
+Route::post('/recibir', 'PeliculaController@recibir');
+
+Route::get('/movies/{pagina?}', 'PeliculaController@index');
+
 Route::resource('usuario','UsuarioController');
 // Las rutas tienen los siguientes métodos
 // get:    conseguir datos

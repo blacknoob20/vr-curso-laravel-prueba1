@@ -19,6 +19,21 @@ class PeliculaController extends Controller
         return view('movies.detalle');
     }
 
+    public function formulario()
+    {
+        return view('movies.formulario');
+    }
+
+    // Recibir los datos del POST
+    public function recibir(Request $request)
+    {
+        $nombre = $request->input('nombre');
+        $email = $request->input('email');
+
+        // var_dump($nombre);
+        return 'El nombre es: '.$nombre.', el email es: '.$email;
+    }
+
     public function redirigir()
     {
         // Forma 1
