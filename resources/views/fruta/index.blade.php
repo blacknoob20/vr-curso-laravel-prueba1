@@ -5,7 +5,7 @@
     
     @foreach ($frutas as $fruta)
         <li>
-            {{$fruta->nombre}}
+            <a href="{{action('FrutasController@detalle',['id' => $fruta->id])}}">{{$fruta->nombre}}</a>
         </li>
     @endforeach
 </ul>
