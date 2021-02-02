@@ -118,4 +118,10 @@ Route::get('/pagina-generica', function(){
 // Route:group permite agrupar las rutas que están dentro de la carpeta fruta.
 Route::group(['prefix'=>'fruta'], function(){
     Route::get('index','FrutasController@index');
+    Route::get('detalle/{id?}','FrutasController@detalle');
+    Route::get('crear','FrutasController@crear');
+    Route::post('guardar','FrutasController@guardar');
+    Route::get('borrrar/{id}','FrutasController@borrar');
+    Route::get('guardar/{id}','FrutasController@editar');
+    Route::post('actualizar/{id}','FrutasController@borrar');
 });
